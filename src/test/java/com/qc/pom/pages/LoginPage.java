@@ -23,6 +23,9 @@ public class LoginPage {
 	@FindBy(id = "submit")
 	WebElement signin;
 	
+	@FindBy(linkText = "Register a new membership")
+	WebElement regPageLink;
+	
 	public void enterEmail(String uName) {
 		email.clear();
 		email.sendKeys(uName);
@@ -35,6 +38,10 @@ public class LoginPage {
 	
 	public void clickOnSubmit() {
 		signin.click();
+	}
+	
+	public void clickOnRegPageLink() {
+		regPageLink.click();
 	}
 	
 	public DashboardPage loginWithValidData(String uName, String uPass) {
